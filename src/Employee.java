@@ -1,14 +1,14 @@
 import java.util.Objects;
 
 public class Employee {
+
     private final String worker;
     private int department;
     private double salary;
-    private final int id;
+    private int id;
     private static int counter;
 
-
-    public Employee(String worker, int department, double salary) {
+public Employee(String worker, int department, double salary) {
         this.worker = worker;
         this.department = department;
         this.salary = salary;

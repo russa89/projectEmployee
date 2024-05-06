@@ -1,6 +1,7 @@
 public class Main {
     private static Employee[] worker = new Employee[10];
     public static void main(String[] args) {
+        EmployeeService employeeService = new EmployeeService();
         worker[0] = new Employee("Иванов Иван Иванович", 3, 42000);
         worker[1] = new Employee("Сидоров Семен Семенович", 1, 56000);
         worker[2] = new Employee("Петров Петр Петрович", 1, 52000);
@@ -12,18 +13,18 @@ public class Main {
         worker[8] = new Employee("Козлов Виталий Борисович", 5, 61000);
         worker[9] = new Employee("Горбунов Юрий Николаевич", 5, 49000);
 
-        for (Employee employee : worker) {
-        System.out.println("Сотрудник: " + employee);
-        }
 
-        double totalSalary = 0;
-        for (Employee employee : worker) {
-            totalSalary = totalSalary + employee.getSalary();
-        }
-        System.out.println(totalSalary);
+        employeeService.printAllWorkersInfo(worker);
 
+employeeService.findTotalSalary(worker);
 
-            }
+employeeService.findAverageSalary(worker);
+
+employeeService.printAllWorkersNames(worker);
+
+        System.out.println("employeeService.findWorkerWithMinSalary(worker) = " + employeeService.findWorkerWithMinSalary(worker));
+
+    }
 
 
         }
