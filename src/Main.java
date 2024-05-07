@@ -2,6 +2,7 @@ public class Main {
     private static Employee[] worker = new Employee[10];
 
     public static void main(String[] args) {
+
         EmployeeService employeeService = new EmployeeService();
         worker[0] = new Employee("Иванов Иван Иванович", 3, 42000);
         worker[1] = new Employee("Сидоров Семен Семенович", 1, 56000);
@@ -27,11 +28,5 @@ public class Main {
 
         employeeService.printAllWorkersNames(worker);
 
-
     }
-
-
 }
-
-
-
