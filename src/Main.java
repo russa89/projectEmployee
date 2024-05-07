@@ -1,5 +1,6 @@
 public class Main {
     private static Employee[] worker = new Employee[10];
+
     public static void main(String[] args) {
         EmployeeService employeeService = new EmployeeService();
         worker[0] = new Employee("Иванов Иван Иванович", 3, 42000);
@@ -16,17 +17,21 @@ public class Main {
 
         employeeService.printAllWorkersInfo(worker);
 
-employeeService.findTotalSalary(worker);
+        employeeService.findTotalSalary(worker);
 
-employeeService.findAverageSalary(worker);
+        employeeService.findWorkerWithMinSalary(worker);
 
-employeeService.printAllWorkersNames(worker);
+        employeeService.findWorkerWithMaxSalary(worker);
 
-        System.out.println("employeeService.findWorkerWithMinSalary(worker) = " + employeeService.findWorkerWithMinSalary(worker));
+        employeeService.findAverageSalary(worker);
+
+        employeeService.printAllWorkersNames(worker);
+
 
     }
 
 
-        }
+}
+
 
 

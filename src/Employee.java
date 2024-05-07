@@ -8,13 +8,13 @@ public class Employee {
     private int id;
     private static int counter;
 
-public Employee(String worker, int department, double salary) {
+    public Employee(String worker, int department, double salary) {
         this.worker = worker;
         this.department = department;
         this.salary = salary;
         counter++;
         this.id = getCounter();
-      }
+    }
 
     public int getCounter() {
         return counter;
@@ -24,23 +24,27 @@ public Employee(String worker, int department, double salary) {
         return id;
     }
 
-    public String getWorker(){
+    public String getWorker() {
         return this.worker;
     }
-    public int getDepartment(){
+
+    public int getDepartment() {
         return this.department;
     }
-    public double getSalary(){
+
+    public double getSalary() {
         return this.salary;
     }
 
-    public void setDepartment(){
+    public void setDepartment() {
         this.department = department;
     }
-    public void setSalary(){
+
+    public void setSalary() {
         this.salary = salary;
     }
-    public String toString(){
+
+    public String toString() {
         return "ID " + this.id + ", ФИО - " + this.worker + ", отдел " + this.department + ", зарплата " + this.salary;
     }
 
