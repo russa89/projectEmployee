@@ -18,15 +18,32 @@ public class Main {
 
         employeeService.printAllWorkersInfo(worker);
 
-        employeeService.findTotalSalary(worker);
+        EmployeeService.findTotalSalary(worker);
 
-        employeeService.findWorkerWithMinSalary(worker);
+        EmployeeService.findWorkerWithMinSalary(worker);
 
-        employeeService.findWorkerWithMaxSalary(worker);
+        EmployeeService.findWorkerWithMaxSalary(worker);
 
-        employeeService.findAverageSalary(worker);
+        EmployeeService.findAverageSalary(worker);
 
         employeeService.printAllWorkersNames(worker);
 
+        EmployeeService.salaryIncrease(worker, 10);
+
+        EmployeeService.findWorkerWithMinSalaryByDep(worker, 1);
+
+        EmployeeService.findWorkerWithMaxSalaryByDep(worker, 1);
+
+        EmployeeService.findTotalSalaryByDep(worker, 1);
+
+        EmployeeService.findAverageSalaryByDep(worker, 1);
+
+        EmployeeService.increaseSalaryByDep(worker, 1, 10);
+
+        EmployeeService.printAllWorkersByDep(worker, 1);
+
+        EmployeeService.findAndPrintWorkersWithSalaryLowerThanMark(worker, 60000);
+
+        EmployeeService.findAndPrintWorkersWithSalaryMoreOrEqualThanMark(worker, 100000);
     }
 }
