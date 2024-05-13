@@ -1,11 +1,16 @@
+import java.util.Arrays;
+
 public class EmployeeService {
+    private final int SIZE = 10;
+
+    private final Employee[] worker;
+
+    public EmployeeService() {
+        this.worker = new Employee[SIZE];
+    }
 
 
-    private int size;
-    private float salary;
-
-
-        public void printAllWorkersInfo(Employee[] worker) {
+    public void printAllWorkersInfo(Employee[] worker) {
         for (Employee employee : worker) {
             if (employee != null) {
                 System.out.println("Сотрудник: " + employee);
@@ -23,7 +28,7 @@ public class EmployeeService {
         }
     }
 
-    public static float findTotalSalary(Employee[] worker) {
+    public float findTotalSalary(Employee[] worker) {
         float totalSalary = 0;
         for (Employee employee : worker) {
             if (employee != null) {
@@ -35,7 +40,7 @@ public class EmployeeService {
 
     }
 
-    public static float findAverageSalary(Employee[] worker) {
+    public float findAverageSalary(Employee[] worker) {
         int workersQtty = 0;
         float averageSalary = 0;
         for (Employee employee : worker) {
@@ -52,7 +57,7 @@ public class EmployeeService {
     }
 
 
-    public static Employee findWorkerWithMinSalary(Employee[] worker) {
+    public Employee findWorkerWithMinSalary(Employee[] worker) {
         float minSalary = worker[0].getSalary();
         Employee workerWithMinSalary = null;
 
@@ -69,7 +74,7 @@ public class EmployeeService {
         return workerWithMinSalary;
     }
 
-    public static Employee findWorkerWithMaxSalary(Employee[] worker) {
+    public Employee findWorkerWithMaxSalary(Employee[] worker) {
         float maxSalary = worker[0].getSalary();
         Employee workerWithMaxSalary = null;
 
@@ -86,7 +91,7 @@ public class EmployeeService {
         return workerWithMaxSalary;
     }
 
-    public static void salaryIncrease(Employee[] worker, float salaryIncreaseIndex) {
+    public void salaryIncrease(Employee[] worker, float salaryIncreaseIndex) {
         for (Employee employee : worker) {
             if (employee != null) {
                 employee.setSalary(employee.getSalary() + (employee.getSalary() * salaryIncreaseIndex) / 100);
@@ -95,7 +100,7 @@ public class EmployeeService {
         }
     }
 
-    public static Employee[] department(Employee[] worker, int department) {
+    public Employee[] department(Employee[] worker, int department) {
         Employee[] dep = new Employee[5];
         int numberOfWorkersInDep = 0;
         for (Employee employee : worker) {
@@ -107,32 +112,32 @@ public class EmployeeService {
         return dep;
     }
 
-    public static Employee findWorkerWithMinSalaryByDep(Employee[] worker, int department) {
+    public Employee findWorkerWithMinSalaryByDep(Employee[] worker, int department) {
         Employee[] dep = department(worker, department);
         return findWorkerWithMinSalary(dep);
     }
 
-    public static Employee findWorkerWithMaxSalaryByDep(Employee[] worker, int department) {
+    public Employee findWorkerWithMaxSalaryByDep(Employee[] worker, int department) {
         Employee[] dep = department(worker, department);
         return findWorkerWithMaxSalary(dep);
     }
 
-    public static float findTotalSalaryByDep(Employee[] worker, int department) {
+    public float findTotalSalaryByDep(Employee[] worker, int department) {
         Employee[] dep = department(worker, department);
         return findTotalSalary(dep);
     }
 
-    public static float findAverageSalaryByDep(Employee[] worker, int department) {
+    public float findAverageSalaryByDep(Employee[] worker, int department) {
         Employee[] dep = department(worker, department);
         return findAverageSalary(dep);
     }
 
-    public static void increaseSalaryByDep(Employee[] worker, int department, float salaryIncreaseIndex) {
+    public void increaseSalaryByDep(Employee[] worker, int department, float salaryIncreaseIndex) {
         Employee[] dep = department(worker, department);
         salaryIncrease(dep, salaryIncreaseIndex);
     }
 
-    public static void printAllWorkersByDep(Employee[] worker, int department) {
+    public void printAllWorkersByDep(Employee[] worker, int department) {
         Employee[] dep = department(worker, department);
         for (Employee employee : dep) {
             if (employee != null) {
@@ -142,7 +147,7 @@ public class EmployeeService {
         }
     }
 
-    public static void findAndPrintWorkersWithSalaryLowerThanMark(Employee[] worker, float mark) {
+    public void findAndPrintWorkersWithSalaryLowerThanMark(Employee[] worker, float mark) {
         for (Employee employee : worker) {
             if (employee != null && employee.getSalary() < mark) {
                 System.out.println("Сотрудник: ID " + employee.getId() + ", ФИО - " + employee.getFullName() +
@@ -151,7 +156,7 @@ public class EmployeeService {
         }
     }
 
-    public static void findAndPrintWorkersWithSalaryMoreOrEqualThanMark(Employee[] worker, float mark) {
+    public void findAndPrintWorkersWithSalaryMoreOrEqualThanMark(Employee[] worker, float mark) {
         for (Employee employee : worker) {
             if (employee != null && employee.getSalary() >= mark) {
                 System.out.println("Сотрудник: ID " + employee.getId() + ", ФИО - " + employee.getFullName() +
@@ -159,4 +164,28 @@ public class EmployeeService {
             }
         }
     }
+
+    public boolean addNewWorker(Employee newWorker) {
+        for (int i = 0; i < worker.length; i++) {
+            if (worker[i] == null) {
+                worker[i] = newWorker;
+                return true;
+
+            }
+        }
+        return false;
+
+    }
+
+    public boolean deleteWorker(int deletedWorker) {
+        for (int i = 0; i < worker.length; i++) {
+            if (worker[i] != null) {
+                return worker[i].getId() == deletedWorker;
+            }
+
+        }
+        return false;
+    }
 }
+
+

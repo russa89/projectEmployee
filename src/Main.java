@@ -13,37 +13,40 @@ public class Main {
         worker[6] = new Employee("Чистяков Борис Семенович", 4, 80000);
         worker[7] = new Employee("Андреев Андрей Андреевич", 4, 76000);
         worker[8] = new Employee("Козлов Виталий Борисович", 5, 61000);
-        worker[9] = new Employee("Горбунов Юрий Николаевич", 5, 49000);
 
 
         employeeService.printAllWorkersInfo(worker);
 
-        EmployeeService.findTotalSalary(worker);
+        employeeService.findTotalSalary(worker);
 
-        EmployeeService.findWorkerWithMinSalary(worker);
+        employeeService.findWorkerWithMinSalary(worker);
 
-        EmployeeService.findWorkerWithMaxSalary(worker);
+        employeeService.findWorkerWithMaxSalary(worker);
 
-        EmployeeService.findAverageSalary(worker);
+        employeeService.findAverageSalary(worker);
 
         employeeService.printAllWorkersNames(worker);
 
-        EmployeeService.salaryIncrease(worker, 10);
+        employeeService.salaryIncrease(worker, 10);
 
-        EmployeeService.findWorkerWithMinSalaryByDep(worker, 1);
+        employeeService.findWorkerWithMinSalaryByDep(worker, 1);
 
-        EmployeeService.findWorkerWithMaxSalaryByDep(worker, 1);
+        employeeService.findWorkerWithMaxSalaryByDep(worker, 1);
 
-        EmployeeService.findTotalSalaryByDep(worker, 1);
+        employeeService.findTotalSalaryByDep(worker, 1);
 
-        EmployeeService.findAverageSalaryByDep(worker, 1);
+        employeeService.findAverageSalaryByDep(worker, 1);
 
-        EmployeeService.increaseSalaryByDep(worker, 1, 10);
+        employeeService.increaseSalaryByDep(worker, 1, 10);
 
-        EmployeeService.printAllWorkersByDep(worker, 1);
+        employeeService.printAllWorkersByDep(worker, 1);
 
-        EmployeeService.findAndPrintWorkersWithSalaryLowerThanMark(worker, 60000);
+        employeeService.findAndPrintWorkersWithSalaryLowerThanMark(worker, 60000);
 
-        EmployeeService.findAndPrintWorkersWithSalaryMoreOrEqualThanMark(worker, 100000);
+        employeeService.findAndPrintWorkersWithSalaryMoreOrEqualThanMark(worker, 100000);
+
+        employeeService.addNewWorker(new Employee("Пупкин Василий Федорович", 3, 50000));
+
+        employeeService.deleteWorker(3);
     }
 }
